@@ -1,0 +1,75 @@
+ANS1-
+CREATE TABLE Customers(
+customerNumber INT PK ,
+customerName VARCHAR(50),
+contactLastName VARCHAR(50),
+contactFirstName VARCHAR(50),
+phone VARCHAR(20),
+adressLine1 VARCHAR(255),
+adressLine2 VARCHAR(255), 
+city VARCHAR(20),
+state VARHCAR(20),
+postalcode ,
+country VARCHAR(20),
+salesRepEmployeeNumber INT(10),
+creditLimit INT(10));
+
+ANS2-
+CREATE TABLE orders(
+orderNumber INT(20),
+orderDate DATE , 
+requiredDate Date,
+shippedDate Date,
+status VARCHAR(25),
+comments VARCHAR(50),
+customerNumber INT FK));
+
+ANS3-
+DESCRIBE orders;
+
+ANS4-
+SELECT COMMENTS FROM orders;
+
+ANS5-
+SELECT ORDERDATE , COUNT(orderNumber) FROM orders WHERE ORDERDATE = " ";
+
+ANS6-
+SELECT  employeNumber, lastName, firstName from employees;
+
+ANS7-
+SELECT orderNumber, customerName FROM orders WHERE customerName = " ";
+
+ANS8-
+SELECT customerName , salesRepEmployeeNumber FROM customers;
+
+ANS9-
+SELECT orderdate , paymentDateAmount
+FROM orders
+INNER JOIN payments 
+ON orders.customerNumber = payments.customerNumber;
+
+ANS10-
+SELECT productName, MSRP, productDescription FROM products;
+
+ANS-11
+SELECT productName, productDescription FROM products WHERE( SELECT MAX(DISTINCT(productCode)) FROM products);
+
+ANS12-
+SELECT city name FROM customers LEFT JOIN orders USING (customerNumber) WHERE orderNumber = MAX(orderNumber);
+
+ANS14-
+SELECT employeeNumber , CONCAT(firstName , lastName) as FullName from employees;
+
+ANS13-
+SELECT state FROM customers HAVING MAX(COUNT(customerNumber));
+
+
+
+
+
+
+
+
+
+ 
+
